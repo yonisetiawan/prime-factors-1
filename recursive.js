@@ -40,6 +40,16 @@ console.log(prime_factors(25)); // [5,5]
 // release 1
 let simple_recursive = (number) => {
   // write your code here
+  number = number.toString();
+  number = number.split("");
+  var hasil = 1
+  if (number < 10){
+    return number.join('');
+  }
+  for (var i = 0; i< number.length; i++){
+    hasil *= number[i]
+  }
+  return simple_recursive(hasil);
 }
 
 console.log(simple_recursive(39)); // 4
