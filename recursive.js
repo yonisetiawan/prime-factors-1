@@ -14,6 +14,17 @@ console.log(prime_factors(123123123)); // [3, 3, 41, 333667]
 // release 1
 let simple_recursive = (number) => {
   // write your code here
+  if (number >= 100) {
+    var numSplit = number.toString().split('')
+    var hasil = numSplit[0]*numSplit[1]*numSplit[2]
+    return simple_recursive(hasil)
+  } else if(number >=10){
+    var numSplit = number.toString().split('')
+    var hasil = numSplit[0]*numSplit[1]
+    return simple_recursive(hasil)
+  } else {
+    return number;
+  }
 }
 
 console.log(simple_recursive(39)); // 4
