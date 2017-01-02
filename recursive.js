@@ -3,6 +3,19 @@
 // release 0
 let prime_factors = (angka, hasil = []) => {
   // write your code here
+  var i = 2;
+  var x = 1;
+  while(i < angka) {
+    if (angka % i === 0) {
+      hasil.push(i);
+      angka = angka / i
+    } else {
+      i = i + x;
+      x = 2
+    }
+  }
+  hasil.push(i)
+  return hasil
 }
 
 console.log(prime_factors(3)); // [3]
