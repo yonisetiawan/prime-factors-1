@@ -1,48 +1,13 @@
 "use strict";
 
-function cekBilanganPrima(x) {
-    var value = 0;
-    if (x <= 1) {
-        return false
-    } else {
-        for (var i = 2; i < x; i++) {
-            if (x % i == 0) {
-                value += 1
-            } else {
-                value += 0
-            }
-        }
-        if (value > 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-}
-
 let prime_factors = (angka, hasil = []) => {
-    var hasil = [];
-    var sisa = 0;
-    var pembagi = 2;
-    if (angka <= 1) {
-        console.log("Angka Min 2");
-    } else if (cekBilanganPrima(angka)) {
-        hasil.push(angka);
-    } else {
-        while (!cekBilanganPrima(angka)) {
-            if (angka % pembagi == 0) {
-                sisa = angka / pembagi;
-                angka = sisa;
-                hasil.push(pembagi);
-                if (cekBilanganPrima(angka)) {
-                    hasil.push(angka)
-                }
-            } else {
-                pembagi++
-            }
-        }
+  for (var i = 2; i <=angka; i++) {
+    while(angka%i==0){
+      hasil.push(i);
+      angka = angka / i;
     }
-    return hasil;
+  }
+  return hasil;
 }
 
 let simple_recursive = (valueSR) => {
