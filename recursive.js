@@ -3,6 +3,15 @@
 // release 0
 let prime_factors = (angka, hasil = []) => {
   // write your code here
+  var prime = [2,3,5,7,11]
+  for (var i = 0; i < prime.length; i++){
+    if (angka % prime[i] == 0){
+      angka /= prime[i]
+      hasil.push(prime[i])
+      i--
+    }
+  }
+  return hasil
 }
 
 console.log(prime_factors(3)); // [3]
